@@ -1,0 +1,34 @@
+.DS_Store
+node_modules
+/dist
+/build
+/coverage
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+/src/KgmWasm/build
+/src/KgmWasm/*.js
+/src/KgmWasm/*.wasm
+/src/QmcWasm/build
+/src/QmcWasm/*.js
+/src/QmcWasm/*.wasm
+
+*.zip
+*.tar.gz
+/sha256sum.txt

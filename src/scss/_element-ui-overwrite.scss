@@ -1,0 +1,291 @@
+$color-checkbox: $blue;
+$color-border-el: #DCDFE6;
+
+$btn-radius: 6px;
+
+/* FORM */
+// checkbox
+.el-checkbox.is-bordered{
+  @include border-radius($btn-radius) ;
+  &:hover{
+    border-color: $color-checkbox;
+    .el-checkbox__label{
+      color: $color-checkbox;
+    }
+  }
+  .el-checkbox__input.is-focus{
+    .el-checkbox__inner{
+      border-color: $color-border-el;
+    }
+  }
+  &.is-checked{
+    background-color: $color-checkbox;
+    .el-checkbox__label{
+      color: white;
+    }
+    .el-checkbox__inner{
+      border-color: white;
+      background-color: white;
+      &:after{
+        border-color: $color-checkbox;
+      }
+    }
+  }
+}
+
+// el-button
+.el-button{
+  @include border-radius($btn-radius) ;
+}
+
+// upload
+.el-upload-dragger{
+  &:hover{
+    background-color: transparentize($color-checkbox, 0.9);
+  }
+}
+.el-upload__tip{
+  text-align: center;
+  color: $text-comment;
+}
+
+
+// dialog
+.el-dialog{
+  @include border-radius(5px);
+  &.el-dialog--center{
+    .el-dialog__body{
+      padding: 25px 25px 15px;
+    }
+    .el-dialog__footer{
+      padding: 10px 20px 30px;
+    }
+  }
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+
+  // FORM
+  .el-radio{
+    &__label{
+      color: $dark-text-main;
+    }
+    &__input{
+      color: $dark-text-info;
+      .el-radio__inner{
+        border-color: $dark-border;
+        background-color: $dark-btn-bg;
+      }
+    }
+
+    &.is-checked{
+      .el-radio__inner{
+        background-color: $blue;
+      }
+      .el-radio__label{
+        font-weight: bold;
+      }
+    }
+  }
+
+  .el-checkbox.is-bordered{
+    border-color: $dark-border;
+    color: $dark-text-main;
+    background-color: $dark-btn-bg;
+    .el-checkbox__inner{
+      background-color: $dark-btn-bg-highlight;
+      border-color: $dark-border-highlight;
+    }
+    &:hover{
+      border-color: $dark-border-highlight;
+      .el-checkbox__inner{
+        background-color: $dark-btn-bg-highlight;
+        border-color: $dark-border-highlight;
+      }
+      .el-checkbox__label{
+        color: $dark-text-info;
+      }
+    }
+    &.is-checked{
+      background-color: $blue;
+      .el-checkbox__inner{
+        border-color: white;
+      }
+      .el-checkbox__label{
+        color: white;
+        font-weight: bold;
+      }
+      &:hover{
+        border-color: $blue;
+        .el-checkbox__inner{
+          background-color: white;
+        }
+      }
+    }
+  }
+
+
+
+  // BUTTON
+  .el-button{
+    background-color: $dark-btn-bg;
+    border-color: $dark-border;
+    color: $dark-text-main;
+
+    &:active{
+      transform: translateY(2px);
+    }
+
+    &--default{
+      &.is-plain {
+        background-color: $dark-btn-bg;
+        &:hover {
+          background-color: $blue;
+          border-color: $blue;
+          color: white;
+        }
+      }
+      &.is-circle {
+        background-color: $dark-blue;
+        border-color: $dark-blue;
+        &:hover {
+          background-color: $blue;
+          border-color: $blue;
+          color: white;
+        }
+      }
+    }
+
+    &--success{
+      &.is-plain {
+        background-color: $dark-btn-bg;
+        &:hover {
+          background-color: $green;
+          border-color: $green;
+          color: white;
+        }
+      }
+      &.is-circle {
+        background-color: $dark-green;
+        border-color: $dark-green;
+        &:hover {
+          background-color: $green;
+          border-color: $green;
+          color: white;
+        }
+      }
+    }
+    &--danger{
+      &.is-plain{
+        border-color: $dark-border;
+        background-color: $dark-btn-bg;
+        &:hover{
+          background-color: $red;
+          border-color: $red;
+        }
+      }
+      &.is-circle {
+        background-color: $dark-red;
+        border-color: $dark-red;
+        &:hover {
+          background-color: $red;
+          border-color: $red;
+          color: white;
+        }
+      }
+    }
+  }
+
+  // 文件拖放区
+  .el-upload__tip{
+    color: $dark-text-info;
+  }
+  .el-upload-dragger{
+    background-color: $dark-uploader-bg;
+    border-color: $dark-border;
+    .el-upload__text{
+      color: $dark-text-info;
+    }
+    &:hover{
+      background: $dark-uploader-bg-highlight;
+      border-color: $dark-border-highlight;
+    }
+  }
+
+  // TABLE
+  .el-table{
+    background-color: $dark-bg-td;
+    &:before{ // 去除表格末尾的横线
+      content: none;
+    }
+    &__header{
+      th{
+        border-bottom-color: $dark-border !important;
+      }
+    }
+    th.el-table__cell{
+      background-color: $dark-bg-th;
+      color: $dark-text-info;
+    }
+    td{
+      border-bottom-color: $dark-border !important;
+    }
+    tr{
+      background-color: $dark-bg-td;
+      color: $dark-text-main;
+      &:hover{
+        td{
+          background-color: $dark-bg-th !important;
+        }
+      }
+    }
+  }
+
+
+  // ALERT
+  .el-notification{
+    background-color: $dark-btn-bg-highlight;
+    border-color: $dark-border;
+    &__title{
+      color: white;
+    }
+    &__content{
+      color: $dark-text-info;
+    }
+  }
+
+  // DIALOG
+  .el-dialog{
+    background-color: $dark-dialog-bg;
+    .el-dialog__header{
+      .el-dialog__title{
+        color: $dark-text-main;
+      }
+    }
+    .el-dialog__body{
+      color: $dark-text-main;
+      .el-input{
+        .el-input__inner{
+          border-color: $dark-border;
+          color: $dark-text-main;
+          background-color: $dark-btn-bg;
+        }
+        .el-input__suffix{
+          .el-input__suffix-inner{
+          }
+        }
+        .el-input__count{
+          .el-input__count-inner{
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    .item-desc{
+      color: $dark-text-info;
+    }
+  }
+
+}

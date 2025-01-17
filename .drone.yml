@@ -1,0 +1,25 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: build
+    image: node:16.18-bullseye
+    commands:
+      - apt-get update
+      - apt-get install -y jq zip
+      - npm ci
+      - npm run test
+      - ./scripts/build-and-package.sh legacy
+      - ./scripts/build-and-package.sh extension
+      - ./scripts/build-and-package.sh modern
+
+  - name: upload artifact
+    image: node:16.18-bullseye
+    environment:
+      DRONE_GITEA_SERVER: https://git.unlock-music.dev
+      GITEA_API_KEY:
+        from_secret: GITEA_API_KEY
+    commands:
+      - ./scripts/upload-packages.sh

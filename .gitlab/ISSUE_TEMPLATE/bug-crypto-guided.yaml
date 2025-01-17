@@ -1,0 +1,76 @@
+name: 解码错误报告 (填表)
+about: 遇到文件解码失败的问题请选择该项。
+title: '[Bug/Crypto] '
+labels:
+  - bug
+  - crypto
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 错误描述
+      description: 请描述你所遇到的问题，以及你期待的行为。
+      placeholder: ''
+      value: ''
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Unlock Music 版本
+      description: |
+        能够重现错误的版本，版本号通常在页面底部。
+        如果不确定，请升级到最新版确认问题是否解决。
+      multiple: true
+      options:
+        - 1.10.5 (仓库最新)
+        - 1.10.3 (官方 DEMO)
+        - 其它（请在错误描述中指定）
+    validations:
+      required: true
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: 产生错误的浏览器
+      multiple: true
+      options:
+        - 火狐 / Firefox
+        - Chrome
+        - Safari
+        - 其它基于 Chromium 的浏览器 (Edge、Brave、Opera 等)
+  - type: dropdown
+    id: music-platform
+    attributes:
+      label: 音乐平台
+      description: |
+        如果需要报告多个平台的问题，请每个平台提交一个新的 Issue。
+        请注意：播放器缓存文件不属于该项目支持的文件类型。
+      multiple: false
+      options:
+        - 其它 (请在错误描述指定)
+        - QQ 音乐
+        - Joox (QQ 音乐海外版)
+        - 虾米音乐
+        - 网易云音乐
+        - 酷我音乐
+        - 酷狗音乐
+        - 喜马拉雅
+        - 咪咕 3D
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志信息
+      description: 如果有，请提供浏览器开发者控制台（Console）的错误日志：
+      render: text
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 我已经阅读并确认下述内容
+      description: ''
+      options:
+        - label: 我已经检索过 Issue 列表，并确认这是一个为报告过的问题。
+          required: true
+        - label: 我有证据表明这是程序导致的问题（如不确认，可以通过 Telegram 讨论组 (https://t.me/unlock_music_chat) 进行讨论）
+          required: true

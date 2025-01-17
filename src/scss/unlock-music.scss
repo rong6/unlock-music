@@ -1,0 +1,144 @@
+@import "variables";
+@import "utility";
+@import "gaps";
+@import "element-ui-overwrite";
+
+// MAIN CONTENT
+body{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "PingFang SC", "微软雅黑", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-size: $fz-main;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  text-align: center;
+  color: $text-main;
+  padding: 30px;
+}
+
+// 音频文件操作
+#app-control {
+  margin-top: 20px;
+}
+
+// 音频播放
+audio{
+  margin-top: 20px;
+}
+
+.table-content{
+  margin-top: 20px;
+}
+
+// 编辑歌曲信息
+.music-cover{
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  i{
+    margin-top: 10px;
+    @extend .btn-like;
+    &:hover{
+      color: $color-checkbox;
+    }
+  }
+  .el-image{
+    padding: 5px;
+    @include border-radius(5px);
+    border: 1px solid $color-border-el;
+    width: 150px;
+    height: 150px;
+  }
+}
+.edit-item{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .label{
+    font-weight: bold;
+    width: 80px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .value{
+    padding: 5px 0;
+    height: 20px;
+    line-height: 20px;
+    margin-left: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .input{
+    margin-left: 10px;
+    input{
+      font-family: inherit;
+      height: 30px;
+      line-height: 20px;
+      @include border-radius(0);
+      border: none;
+      border-bottom: 1px solid $color-border-el;
+      padding: 5px 5px;
+    }
+  }
+  i{
+    margin-left: 10px;
+    @extend .btn-like;
+    &:hover{
+      color: $color-checkbox;
+    }
+  }
+}
+
+.tip{
+  margin-top: 20px;
+  color: $text-comment;
+  font-size: $fz-mini-content;
+  a{
+    color: inherit;
+  }
+}
+
+// footer
+#app-footer {
+  margin-top: 40px;
+  text-align: center;
+  color: $text-copyright;
+  line-height: 1.3;
+  font-size: $fz-mini-content;
+  a {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    color: darken($text-copyright, 10%);
+    &:hover{
+      color: $color-link;
+    }
+  }
+}
+
+// 首页弹窗提示信息的 更新信息 面板
+.update-info{
+  @include border-radius(8px);
+  overflow: hidden;
+  border: 1px solid $color-border-el;
+  margin: 10px 0;
+  .update-title{
+    font-size: $fz-mini-title;
+    padding: 3px 10px;
+    background-color: $color-border-el;
+  }
+  .update-content{
+    font-size: $fz-mini-content;
+    line-height: 1.5;
+    padding: 5px 8px;
+  }
+}
+
+@import "dark-mode"; // dark-mode 放在 normal 后面，以获得更高优先级

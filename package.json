@@ -1,0 +1,60 @@
+{
+  "name": "unlock-music",
+  "version": "1.10.6",
+  "ext_build": 0,
+  "updateInfo": "修正文件过小的情况下酷狗 / QQ解密错误问题",
+  "license": "MIT",
+  "description": "Unlock encrypted music file in browser.",
+  "repository": {
+    "type": "git",
+    "url": "https://git.unlock-music.dev/um/web"
+  },
+  "private": true,
+  "scripts": {
+    "postinstall": "patch-package",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test": "jest",
+    "pretty": "prettier --write src/{**/*,*}.{js,ts,jsx,tsx,vue}",
+    "pretty:check": "prettier --check src/{**/*,*}.{js,ts,jsx,tsx,vue}",
+    "make-extension": "node ./make-extension.js"
+  },
+  "dependencies": {
+    "@babel/preset-typescript": "^7.16.5",
+    "@unlock-music/joox-crypto": "^0.0.1-R5",
+    "@xhacker/kgmwasm": "^1.0.0",
+    "@xhacker/qmcwasm": "^1.0.0",
+    "base64-js": "^1.5.1",
+    "browser-id3-writer": "^4.4.0",
+    "core-js": "^3.16.0",
+    "crypto-js": "^4.1.1",
+    "element-ui": "^2.15.5",
+    "iconv-lite": "^0.6.3",
+    "jimp": "^0.16.1",
+    "metaflac-js": "^1.0.5",
+    "music-metadata": "7.9.0",
+    "music-metadata-browser": "2.2.7",
+    "register-service-worker": "^1.7.2",
+    "threads": "^1.6.5",
+    "vue": "^2.6.14"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.0.2",
+    "@types/jest": "^27.0.3",
+    "@vue/cli-plugin-babel": "^4.5.13",
+    "@vue/cli-plugin-pwa": "^4.5.13",
+    "@vue/cli-plugin-typescript": "^4.5.13",
+    "@vue/cli-service": "^4.5.13",
+    "babel-plugin-component": "^1.1.1",
+    "jest": "^27.4.5",
+    "patch-package": "^6.4.7",
+    "prettier": "2.5.1",
+    "sass": "^1.38.1",
+    "sass-loader": "^10.2.0",
+    "semver": "^7.3.5",
+    "threads-plugin": "^1.4.0",
+    "typescript": "^4.5.4",
+    "vue-cli-plugin-element": "^1.0.1",
+    "vue-template-compiler": "^2.6.14"
+  }
+}

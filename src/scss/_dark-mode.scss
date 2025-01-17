@@ -1,0 +1,66 @@
+/*
+ * 样式 - 暗黑模式
+ */
+
+@media (prefers-color-scheme: dark) {
+  #app{
+    color: $dark-text-info;
+  }
+  body{
+    background-color: $dark-bg;
+  }
+
+  // 编辑歌曲信息
+  .music-cover{
+    i{
+      &:hover{
+        color: $color-checkbox;
+      }
+    }
+    .el-image{
+      border: 1px solid $dark-border;
+    }
+  }
+  .edit-item{
+    .label{
+    }
+    .value{
+    }
+    .input{
+      input{
+        background-color: transparent !important;
+        border-bottom: 1px solid $dark-border;
+      }
+    }
+    i{
+      &:hover{
+        color: $color-checkbox;
+      }
+    }
+  }
+
+
+  // footer
+  #app-footer {
+    a {
+      color: lighten($text-comment, 5%);
+      &:hover{
+        color: $color-link;
+      }
+    }
+  }
+
+  // 自定义样式
+  // 首页弹窗提示信息的 更新信息 面板
+  .update-info{
+    border: 1px solid $dark-btn-bg !important;
+    .update-title{
+      color: $dark-text-main;
+      background-color: $dark-btn-bg !important;
+    }
+    .update-content{
+      color: $dark-text-info;
+      padding: 10px;
+    }
+  }
+}

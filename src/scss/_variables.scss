@@ -1,0 +1,34 @@
+// COLORS
+$blue      : #409EFF;
+$red       : #F56C6C;
+$green     : #85ce61;
+
+// TEXT COLOR
+$text-main      : #2C3E50;
+$text-copyright : #777;
+$text-comment   : #999;
+$color-link     : $blue;
+
+// FONT SIZE
+$fz-main: 14px;
+$fz-mini-title: 13px;
+$fz-mini-content: 12px;
+
+// DARK MODE
+$dark-border                : lighten(black, 25%);
+$dark-border-highlight      : lighten(black, 55%);
+$dark-bg                    : lighten(black, 10%);
+$dark-text-main             : lighten(black, 90%);
+$dark-text-info             : lighten(black, 60%);
+$dark-uploader-bg           : lighten(black, 13%);
+$dark-dialog-bg             : lighten(black, 15%);
+$dark-uploader-bg-highlight : lighten(black, 18%);
+$dark-btn-bg                : lighten(black, 20%);
+$dark-btn-bg-highlight      : lighten(black, 30%);
+$dark-bg-th                 : lighten(black, 18%);
+$dark-bg-td                 : lighten(black, 13%);
+$dark-color-link            : $green;
+
+$dark-blue      : darken(desaturate($blue, 40%), 30%);
+$dark-red       : darken(desaturate($red, 50%), 30%);
+$dark-green     : darken(desaturate($green, 30%), 30%);
