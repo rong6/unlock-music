@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  unlock-music:
+    build: .
+    container_name: unlock-music
+    ports:
+      - "9200:9200"
+    restart: unless-stopped
+    networks:
+      - unlock-music-net
+
+networks:
+  unlock-music-net:
+    driver: bridge
